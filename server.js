@@ -20,7 +20,7 @@ let products = [
   { id: 2, name: 'Téléphone Samsung', price: 180000, stock: 30 },
   { id: 3, name: 'Tablette iPad', price: 450000, stock: 8 }
 ];
-let idCounter = { users: 4, products: 4 };
+let idCounter = { users: 104, products: 104 };
 
 // Swagger minimal
 const swaggerDefinition = {
@@ -30,7 +30,14 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'CRUD Users & Products + /health. Swagger UI à /docs'
   },
-  servers: [{ url: `https://example.com` }], // Render remplacera l’URL, c’est OK
+  servers: [{
+    url: 'http://localhost:3001',
+    description: 'Serveur de développement'
+  },
+  {
+    url: 'https://mini-api-ogpc.onrender.com', // ← Remplacez par votre vraie URL
+    description: 'Serveur de production (Render)'
+  }], // Render remplacera l’URL, c’est OK
   components: {
     schemas: {
       User: { type: 'object', properties: {
